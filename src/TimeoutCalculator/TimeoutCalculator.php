@@ -1,6 +1,6 @@
 <?php
 
-namespace Vectorwyse\IdleTimeoutAlert\TimeoutCalculator;
+namespace Ryunosukee\IdleTimeoutAlert\TimeoutCalculator;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;

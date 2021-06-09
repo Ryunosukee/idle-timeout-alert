@@ -1,21 +1,23 @@
 <template>
     <modal-component id="timeout-modal" :visible="showModal" noclose="true" @close="resetTimeout()">
+        <template #title>
+            ¡No hemos tenido noticias tuyas en un tiempo!
+        </template>
         <div>
-            <p class="text-center">We haven't heard from you in a while!</p>
-            <p class="text-center">You will be automatically logged out in:</p>
-            <p class="text-center">
-                <span class="text-danger" style="font-size: 1.5em;">{{ this.remainingTime }}</span>
-                seconds
+            <p class="text-center text-xl">La sesión se cerrara automáticamente en:</p>
+            <p class="text-center text-xl">
+                <span class="text-custom-1" style="font-size: 1.5em;">{{ this.remainingTime }}</span>
             </p>
-            <div class="d-flex flex-column w-100 justify-content-between align-items-center py-3">
-                <button
-                    class="btn btn-sm btn-primary font-weight-bold text-uppercase text-white"
-                    @click="resetTimeout()"
-                >
-                    <span>I'm still here!</span>
-                </button>
-            </div>
+            <p class="text-center text-xl">segundos</p>
         </div>
+
+        <template #footer>
+            <button
+                class="btn btn-primary uppercase"
+                @click="resetTimeout()">
+                <span>¡Todavía estoy aquí!</span>
+            </button>
+        </template>
     </modal-component>
 </template>
 

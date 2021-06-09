@@ -1,6 +1,6 @@
 <?php
 
-namespace Vectorwyse\IdleTimeoutAlert;
+namespace Ryunosukee\IdleTimeoutAlert;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -16,7 +16,7 @@ class IdleTimeoutAlertServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
 
         $this->publishes([
-            __DIR__.'/../resources/assets' => resource_path('assets/vendor/vectorwyse/idle-timeout-alert')
+            __DIR__.'/../resources/assets' => resource_path('assets/vendor/ryunosukee/idle-timeout-alert')
         ], 'vue-components');
     }
 
