@@ -17,12 +17,13 @@ class TimeoutCalculator
     {
         // We have to get session id from cookie.
         // If we try to grab it from session(), we end up touching the timestamp during page load
-        $cookie = $request->cookie(config('session.cookie'));
+       $cookie = $request->cookie(config('session.cookie'));
+
         if (!$cookie) {
             throw new TimeoutCalculatorException('Not logged in');
         }
 
-        $sessionId = Crypt::decryptString($request->cookie('laravel_session'));
+        $sessionId = Crypt::decryptString($cookie);
         $sessionId = explode('|', $sessionId)[1];
         
         switch (config('session.driver')) {
